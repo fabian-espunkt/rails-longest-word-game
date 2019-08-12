@@ -13,7 +13,6 @@ class GamesController < ApplicationController
     word_serialized = open(url).read
     word = JSON.parse(word_serialized)
     # raise
-    # if @score.upcase.split("").all? { |e| this.include?(e) }
     if @score.split("").all? { |e| @letters.include?(e) }
       if word['found'] == true
       @result = "Congratulations! #{@score.capitalize} is a valid English word."
