@@ -15,12 +15,12 @@ class GamesController < ApplicationController
     # raise
     if @score.split("").all? { |e| @letters.include?(e) }
       if word['found'] == true
-      @result = "Congratulations! #{@score.capitalize} is a valid English word."
+        @result = "Congratulations! #{@score.capitalize} is a valid English word."
       elsif word['found'] == false
-      @result = "Sorry, but #{@score.capitalize} does not seem to be a valid English word."
+        @result = "Sorry, but #{@score.capitalize} does not seem to be a valid English word."
       end
     else
-      @result = "Sorry but #{@score} can't be built out of #{@letters.join(", ")}"
+      @result = "Sorry but #{@score} can't be built out of #{@letters.join(", ")}. Please play again and try agian."
     end
   end
 end
